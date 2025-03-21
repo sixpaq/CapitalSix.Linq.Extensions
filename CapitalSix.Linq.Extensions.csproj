@@ -1,29 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <PackageVersion>1.0</PackageVersion>
-        <PackageId>CapitalSix.Linq.Extensions</PackageId>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Title>A collection of reusable Linq extensions.</Title>
-        <RepositoryUrl>https://github.com/sixpaq/capitalsix.linq.extensions</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <Authors>Mike Wijnen</Authors>
-        <Company>CapitalSix</Company>
-        <Nullable>enable</Nullable>
-        <RootNamespace>CapitalSix.Linq.Extensions</RootNamespace>
-        <PackageLicense>none</PackageLicense>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <License>none</License>
-        <Description>This module contains a set of practical and resusable Linq extensions.</Description>
-        <PackageTags>linq;extensions;chunk;group;duplicates;</PackageTags>
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>true</IncludeBuildOutput>
-    </PropertyGroup>
+  <PropertyGroup>
+    <PackageVersion>9.0.0</PackageVersion>
+    <PackageId>CapitalSix.Linq.Extensions</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Title>A collection of reusable Linq extensions.</Title>
+    <RepositoryUrl>https://github.com/sixpaq/capitalsix.linq.extensions</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>Mike Wijnen</Authors>
+    <Company>CapitalSix</Company>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CapitalSix.Linq.Extensions</RootNamespace>
+    <PackageLicense>none</PackageLicense>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <License>none</License>
+    <Description>This module contains a set of practical and resusable Linq extensions.</Description>
+    <PackageTags>linq;extensions;chunk;group;duplicates;</PackageTags>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <IncludeSymbols>true</IncludeSymbols>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <None Include="README.md" Pack="true" Visible="false" PackagePath="README.md" />
-    </ItemGroup>
+  <PropertyGroup>
+    <CopyDebugSymbolFilesFromPackages>true</CopyDebugSymbolFilesFromPackages>
+    <CopyDocumentationFilesFromPackages>true</CopyDocumentationFilesFromPackages>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="README.md" Pack="true" Visible="false" PackagePath="README.md" />
+  </ItemGroup>
 
 </Project>
