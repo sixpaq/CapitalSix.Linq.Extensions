@@ -2,6 +2,8 @@
 A collection of reusable Linq extensions.
  
 ## Chunk extensions
+The chunk extension splits a collection in preferred size
+parts and returns the "Chuncks" in a list.
 
 ``` C#
 var list = new List<int>();
@@ -53,7 +55,7 @@ var list = new List<string>()
     "Banana",
     "tree"
 };
-var grouped = list.Group(new CaseInsensitiveComparer());
+var duplicates = list.Duplicates(new CaseInsensitiveComparer());
 ```
 Suppose that the CaseInsensitiveComparere compares on trimmed
 and lowercase values, than this results in a dictionary with
@@ -61,4 +63,32 @@ and lowercase values, than this results in a dictionary with
 - "Monkey": { "Monkey", "monkey", " Monkey" },
 - "banana": { "banana", "Banana" }
 
+## Enumerable extensions
+This extensions contists of 3 extension methods:
+- AsCancellable
+- WhenEachAsync
+- SelectManyAsync
 
+### AsCancellable
+This method enables an enumerator to iterate and abort when
+a cancellation token is triggered
+``` C#
+
+var list = new List<int>();
+for (var i = 0; i < 21000; i++) list.Add(i);
+
+// This iteration cancels when the cancellation
+// token is triggered
+var result = list
+  .AsCancellable(cancellationToken)
+  .Select(i = i + 1)
+  .ToArray();
+```
+
+### WhenEachAsync
+This method asynchronically waits until all tasks are finished.
+The individual results are returned in an IAsyncEnumerable as
+soon as they are ready.
+
+### SelectManyAsync
+This method works similar to Linq's SelectMany, but asynchronically.
